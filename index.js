@@ -1,16 +1,20 @@
-
+//mettons un intervalle de temps pour attendre 3s avant que le script s'exécute
 setTimeout(() => {
+    //choix de service offert
     let choix = prompt(`
 1.Solde de mon compte
 2:Transfert d'argent
 3.Paiement de facture
 4.Achats: Crédit et Pass
 5.Quitter`)
+//solde par defaut
     let solde = 1000000
+    //si le chois de l'utilisateur se porte sur le un
     if (choix == 1) {
+        
         getValues()
         alert(`votre solde est de ${solde} FrCFA`)
-
+//si le choix se porte sur le 2
     } else if (choix == 2) {
         getValues()
         let somme = prompt("veuillez entrer un montant")
@@ -32,7 +36,7 @@ setTimeout(() => {
             alert("merci d'entrer un montant (un nombre)")
         }
 
-
+//si le chois se porte sur le 3
     } else if (choix == 3) {
         getValues()
         let facture = prompt(`
@@ -40,6 +44,7 @@ setTimeout(() => {
     2:Seneau
     3.Fibre orange`
         )
+        //s'il s'agit de la facture 1(senelec)
         if (facture == 1) {
             let numero = prompt("veuillez entrer le numero de police")
             if (numero.length == 15) {
@@ -59,7 +64,7 @@ setTimeout(() => {
             } else {
                 alert("le numéro que vous avez saisi est incorrect merci de réessayer")
             }
-
+//s'il s'agit de la facture 2(seneau)
         } else if (facture == 2) {
             let numero = prompt("veuillez entrer le numero de police")
             if (numero.length == 15) {
@@ -79,6 +84,7 @@ setTimeout(() => {
             } else {
                 alert("le numéro que vous avez saisi est incorrect merci de réessayer")
             }
+            //s'il s'agit de la facture 3(fibre orange)
         } else if (facture == 3) {
             let numero = prompt("veuillez entrer le numero de police")
             if (numero.length == 15) {
@@ -99,6 +105,7 @@ setTimeout(() => {
                 alert("le numéro que vous avez saisi est incorrect merci de réessayer")
             }
         }
+        //si le chois de l'utilisateur se porte sur le 4
     } else if (choix == 4) {
         getValues()
         let achat = prompt(`
@@ -106,6 +113,7 @@ setTimeout(() => {
     2:Pass Internet
     3.Crédit Téléphonique`
         )
+        //s'il s'agit de l'achat 1 (illimix)
         if (achat == 1) {
             let numero = prompt("veuillez entrer le numero à qui envoyer")
             if (numero.length == 9) {
@@ -125,7 +133,7 @@ setTimeout(() => {
             } else {
                 alert("le numéro que vous avez saisi est incorrect merci de réessayer")
             }
-
+//s'il s'agit de l'achat 2 (Pass internet)
         } else if (achat == 2) {
             let numero = prompt("veuillez entrer le numero à qui envoyer")
             if (numero.length == 9) {
@@ -145,6 +153,7 @@ setTimeout(() => {
             } else {
                 alert("le numéro que vous avez saisi est incorrect merci de réessayer")
             }
+            //s'il s'agit de l'achat 3 (crédit téléphone)
         } else if (achat == 3) {
             let numero = prompt("veuillez entrer le numero à qui envoyer")
             if (numero.length == 9) {
@@ -165,9 +174,11 @@ setTimeout(() => {
                 alert("le numéro que vous avez saisi est incorrect merci de réessayer")
             }
         }
+//si le choix se porte sur le 5
+    } else if(choix == 5){
 
-    } else {
-
+    }else{
+        alert("merci d'entrer l'un des chiffres présents sur la boite de dialogue")
     }
 }, 3000);
 
