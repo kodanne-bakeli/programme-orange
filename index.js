@@ -7,14 +7,14 @@ setTimeout(() => {
 3.Paiement de facture
 4.Achats: Crédit et Pass
 5.Quitter`)
-//solde par defaut
+    //solde par defaut
     let solde = 1000000
     //si le chois de l'utilisateur se porte sur le un
     if (choix == 1) {
-        
+
         getValues()
         alert(`votre solde est de ${solde} FrCFA`)
-//si le choix se porte sur le 2
+        //si le choix se porte sur le 2
     } else if (choix == 2) {
         getValues()
         let somme = prompt("veuillez entrer un montant")
@@ -26,6 +26,12 @@ setTimeout(() => {
                 let newSolde = parseFloat(solde) - parseFloat(somme)
                 alert(`vous avez envoyé ${somme} FrCFA à ${numero} avec succés 
                 votre solde est maintenant ${newSolde} Frcfa`)
+                let retour = prompt(`revenir
+                quitter`)
+                if (retour == 1) {
+                    window.location.reload(true);
+                };
+
                 solde = newSolde
                 store()
             } else {
@@ -36,7 +42,7 @@ setTimeout(() => {
             alert("merci d'entrer un montant (un nombre)")
         }
 
-//si le chois se porte sur le 3
+        //si le chois se porte sur le 3
     } else if (choix == 3) {
         getValues()
         let facture = prompt(`
@@ -64,7 +70,7 @@ setTimeout(() => {
             } else {
                 alert("le numéro que vous avez saisi est incorrect merci de réessayer")
             }
-//s'il s'agit de la facture 2(seneau)
+            //s'il s'agit de la facture 2(seneau)
         } else if (facture == 2) {
             let numero = prompt("veuillez entrer le numero de police")
             if (numero.length == 15) {
@@ -133,7 +139,7 @@ setTimeout(() => {
             } else {
                 alert("le numéro que vous avez saisi est incorrect merci de réessayer")
             }
-//s'il s'agit de l'achat 2 (Pass internet)
+            //s'il s'agit de l'achat 2 (Pass internet)
         } else if (achat == 2) {
             let numero = prompt("veuillez entrer le numero à qui envoyer")
             if (numero.length == 9) {
@@ -174,13 +180,13 @@ setTimeout(() => {
                 alert("le numéro que vous avez saisi est incorrect merci de réessayer")
             }
         }
-//si le choix se porte sur le 5
-    } else if(choix == 5){
+        //si le choix se porte sur le 5
+    } else if (choix == 5) {
 
-    }else{
+    } else {
         alert("merci d'entrer l'un des chiffres présents sur la boite de dialogue")
     }
-}, 3000);
+}, 1000);
 
 function store() {
     localStorage.setItem("solde", solde)
